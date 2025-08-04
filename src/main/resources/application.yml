@@ -1,6 +1,11 @@
 # ===============================================
 # Configuration Spring Boot
 # ===============================================
+server:
+  # Lit la variable d'environnement PORT. Si elle n'est pas définie (par ex. en local),
+  # utilise le port 8083 par défaut.
+  port: ${PORT:8081}
+
 spring:
   application:
     name: notification-service # Le nom de l'application
