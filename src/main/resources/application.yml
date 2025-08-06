@@ -8,7 +8,7 @@ server:
 
 spring:
   application:
-    name: notification-service # Le nom de l'application
+    name: notification-service
 
 # ===============================================
 # Configuration des propriétés personnalisées
