@@ -8,8 +8,7 @@ RUN mvn clean package -DskipTests
 # Étape 2: Créer une image légère pour l'exécution
 FROM openjdk:11-jre-slim
 WORKDIR /app
-# Copier le JAR depuis l'étape de build
 COPY --from=build /app/target/*.jar app.jar
-# Le port 8080 est le port par défaut attendu par Cloud Run
-ENV PORT 8081
-ENTRYPOINT ["java", "-jar", "app.jar"]
+
+# Démarrage dynamique sur le port fourni par Cloud Run
+ENTRYPOINT ["java", "-Dserver.port=${PORT}", "-jar", "app.jar"]
