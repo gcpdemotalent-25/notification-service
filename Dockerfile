@@ -11,5 +11,5 @@ WORKDIR /app
 # Copier le JAR depuis l'étape de build
 COPY --from=build /app/target/*.jar app.jar
 # Le port 8080 est le port par défaut attendu par Cloud Run
-ENV PORT 8080
+ENV PORT 8081
 ENTRYPOINT ["java", "-jar", "app.jar"]
