@@ -1,0 +1,13 @@
+#spring.application.name=notification-service
+##server.port=8084
+#server.port=${PORT:8084}
+## Port du serveur (commenté).
+#
+## ===============================================
+## Configuration de la communication via Pub/Sub
+## ===============================================
+#
+## C'est la seule configuration métier nécessaire.
+## Spécifie le nom de la subscription que ce service doit écouter.
+## Spring Cloud GCP s'occupera du reste.
+#app.pubsub.subscription-name=envoi-notifications-sub
