@@ -7,6 +7,8 @@ server:
   port: ${PORT:8084}
 
 spring:
+  autoconfigure:
+    exclude: org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration
   application:
     name: notification-service
 
