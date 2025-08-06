@@ -11,5 +11,5 @@ WORKDIR /app
 COPY --from=build /app/target/*.jar app.jar
 
 # Démarrage dynamique sur le port fourni par Cloud Run
-#ENTRYPOINT ["sh", "-c", "java -Dserver.port=$PORT -jar app.jar"]
-ENTRYPOINT ["java", "-jar", "app.jar"]
+ENTRYPOINT ["sh", "-c", "java -Dserver.port=$PORT -jar app.jar"]
+#ENTRYPOINT ["java", "-jar", "app.jar"]
